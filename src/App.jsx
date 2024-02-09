@@ -4,6 +4,8 @@ import MovieCard from "./components/MovieCard/movie-card";
 import ListPagination from "./components/ListPagination/list-pagination";
 import SideMenu from "./components/SideMenu/side-menu";
 import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from "./services/tmdb.movies";
+import { getAiringTodaySeries } from "./services/tmdb.series";
+import SerieCard from "./components/SerieCard/serie-card";
 
 function App() {
     const [nowPlayingMovies, setNowPlayingMovies] = useState(new Array);
@@ -53,6 +55,18 @@ function App() {
             setUpcomingMoviesTotalPages(response.total_pages);
         }).catch((error) => console.log(error));
     }, [upcomingMoviesCurrentPage]);
+
+    const [airingTodaySeries, setAiringTodaySeries] = useState(new Array);
+    const [airingTodaySeriesCurrentPage, setAiringTodaySeriesCurrentPage] = useState(1);
+    const [airingTodaySeriesTotalPages, setAiringTodaySeriesTotalPages] = useState(1);
+
+    useEffect(() => {
+        getAiringTodaySeries(airingTodaySeriesCurrentPage).then((response) => {
+            setAiringTodaySeries(response.results);
+            setAiringTodaySeriesCurrentPage(response.page);
+            setAiringTodaySeriesTotalPages(response.total_pages);
+        }).catch((error) => console.log(error));
+    }, [airingTodaySeriesCurrentPage]);
 
     return (
         <>
@@ -110,6 +124,20 @@ function App() {
                     currentPage={upcomingMoviesCurrentPage}
                     totalPages={upcomingMoviesTotalPages}
                     pageHandler={setUpcomingMoviesCurrentPage}
+                />
+            </section>
+
+            <section className="container" id="airing-today-series">
+                <h1 className="list-title">Airing Today Series</h1>
+                <List>
+                    {airingTodaySeries?.map((serie) => {
+                        return <SerieCard key={serie?.id} serie={serie} />;
+                    })}
+                </List>
+                <ListPagination 
+                    currentPage={airingTodaySeriesCurrentPage}
+                    totalPages={airingTodaySeriesTotalPages}
+                    pageHandler={setAiringTodaySeriesCurrentPage}
                 />
             </section>
         </>
