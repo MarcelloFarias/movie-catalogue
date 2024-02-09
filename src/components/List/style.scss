@@ -1,0 +1,10 @@
+@import "../../index.scss";
+
+.list {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 3rem;
+    row-gap: 5rem;
+    width: 100%;
+}
