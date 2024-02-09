@@ -1,0 +1,53 @@
+@import "../../index.scss";
+
+.side-menu-container {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 15%;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .side-menu-category {
+        font-size: 2.5rem;
+        color: $gray;
+        padding: 0.6rem;
+        display: grid;
+        border-radius: 8px;
+    }
+
+    .side-nav {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        margin: 20px 0;
+
+        .side-nav-item {
+            a {
+                color: $red;
+                font-size: 1.5rem;
+                text-decoration: none;
+                padding: 0.6rem;
+                border: solid 1px $dark;
+                border-radius: 8px;
+                display: grid;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    border: solid 1px $light;
+                    color: $light;
+                }
+            }
+        }
+    }
+}

@@ -24,6 +24,5 @@ export async function getTopRatedMovies(currentPage) {
 
 export async function getUpcomingMovies(currentPage) {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${currentPage}`, options);
-    console.log(response.data)
     return response.data;
 }

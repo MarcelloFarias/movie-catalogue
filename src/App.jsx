@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import List from "./components/List/list";
 import MovieCard from "./components/MovieCard/movie-card";
 import ListPagination from "./components/ListPagination/list-pagination";
+import SideMenu from "./components/SideMenu/side-menu";
 import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from "./services/tmdb.movies";
 
 function App() {
@@ -55,7 +56,9 @@ function App() {
 
     return (
         <>
-            <main className="container">
+            <SideMenu/>
+            <main className="container" id="now-playing-movies">
+                <h1 className="list-title">Now Playing Movies</h1>
                 <List>
                     {nowPlayingMovies?.map((movie) => {
                         return <MovieCard key={movie?.id} movie={movie} />
@@ -68,7 +71,8 @@ function App() {
                 />
             </main>
 
-            <section className="container">
+            <section className="container" id="popular-movies">
+                <h1 className="list-title">Popular Movies</h1>
                 <List>
                     {popularMovies?.map((movie) => {
                         return <MovieCard key={movie?.id} movie={movie} />
@@ -81,7 +85,8 @@ function App() {
                 />
             </section>
 
-            <section className="container">
+            <section className="container" id="top-rated-movies">
+                <h1 className="list-title">Top Rated Movies</h1>
                 <List>
                     {topRatedMovies?.map((movie) => {
                         return <MovieCard key={movie?.id} movie={movie} />
@@ -94,7 +99,8 @@ function App() {
                 />
             </section>
 
-            <section className="container">
+            <section className="container" id="upcoming-movies"> 
+                <h1 className="list-title">Upcoming Movies</h1>
                 <List>
                     {upcomingMovies?.map((movie) => {
                         return <MovieCard key={movie?.id} movie={movie} />

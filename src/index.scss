@@ -10,6 +10,7 @@ $light: #ededed;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif, Helvetica;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,13 +20,22 @@ body {
 }
 
 .container {
-    width: 100%;
+    position: relative;
+    left: 15%;
+    width: 85%;
     min-height: 100dvh;
 }
 
 main, section {
     display: grid;
     place-items: center;
+
+    .list-title {
+        margin: 20px 0;
+        color: $light;
+        font-size: 2rem;
+        text-align: center;
+    }
 }
 
 .card {
