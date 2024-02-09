@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import List from "./components/List/list";
 import MovieCard from "./components/MovieCard/movie-card";
 import ListPagination from "./components/ListPagination/list-pagination";
-import { getNowPlayingMovies, getPopularMovies } from "./services/tmdb.api";
+import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from "./services/tmdb.movies";
 
 function App() {
     const [nowPlayingMovies, setNowPlayingMovies] = useState(new Array);
@@ -29,6 +29,30 @@ function App() {
         }).catch((error) => console.log(error));
     }, [popularMoviesCurrentPage]);
 
+    const [topRatedMovies, setTopRatedMovies] = useState(new Array);
+    const [topRatedMoviesCurrentPage, setTopRatedMoviesCurrentPage] = useState(1);
+    const [topRatedMoviesTotalPages, setTopRatedMoviesTotalPages] = useState(1);
+
+    useEffect(() => {
+        getTopRatedMovies(topRatedMoviesCurrentPage).then((response) => {
+            setTopRatedMovies(response.results);
+            setTopRatedMoviesCurrentPage(response.page);
+            setTopRatedMoviesTotalPages(response.total_pages);
+        }).catch((error) => console.log(error));
+    }, [topRatedMoviesCurrentPage]);
+
+    const [upcomingMovies, setUpcomingMovies] = useState(new Array);
+    const [upcomingMoviesCurrentPage, setUpcomingMoviesCurrentPage] = useState(1);
+    const [upcomingMoviesTotalPages, setUpcomingMoviesTotalPages] = useState(1);
+
+    useEffect(() => {
+        getUpcomingMovies(upcomingMoviesCurrentPage).then((response) => {
+            setUpcomingMovies(response.results);
+            setUpcomingMoviesCurrentPage(response.page);
+            setUpcomingMoviesTotalPages(response.total_pages);
+        }).catch((error) => console.log(error));
+    }, [upcomingMoviesCurrentPage]);
+
     return (
         <>
             <main className="container">
@@ -54,6 +78,32 @@ function App() {
                     currentPage={popularMoviesCurrentPage}
                     totalPages={popularMoviesTotalPages}
                     pageHandler={setPopularMoviesCurrentPage}
+                />
+            </section>
+
+            <section className="container">
+                <List>
+                    {topRatedMovies?.map((movie) => {
+                        return <MovieCard key={movie?.id} movie={movie} />
+                    })}
+                </List>
+                <ListPagination 
+                    currentPage={topRatedMoviesCurrentPage}
+                    totalPages={topRatedMoviesTotalPages}
+                    pageHandler={setTopRatedMoviesCurrentPage}
+                />
+            </section>
+
+            <section className="container">
+                <List>
+                    {upcomingMovies?.map((movie) => {
+                        return <MovieCard key={movie?.id} movie={movie} />
+                    })}
+                </List>
+                <ListPagination 
+                    currentPage={upcomingMoviesCurrentPage}
+                    totalPages={upcomingMoviesTotalPages}
+                    pageHandler={setUpcomingMoviesCurrentPage}
                 />
             </section>
         </>

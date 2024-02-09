@@ -23,7 +23,7 @@ body {
     min-height: 100dvh;
 }
 
-main {
+main, section {
     display: grid;
     place-items: center;
 }
