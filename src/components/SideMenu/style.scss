@@ -15,9 +15,20 @@
     justify-content: center;
     flex-direction: column;
 
-    .side-menu-category {
-        font-size: 2.5rem;
-        color: $gray;
+    &:hover {
+        background: linear-gradient(to right, $gray, transparent);
+        width: 30%;
+        z-index: 2;
+
+        .side-nav-label {
+            display: inline;
+        }
+    }
+
+    .side-nav-label {
+        font-size: 1rem;
+        margin-left: 5px;
+        display: none;
     }
 
     .side-nav {
@@ -30,21 +41,26 @@
         margin: 20px 0;
 
         .side-nav-item {
-            a {
+            .side-nav-link {
                 color: $red;
                 font-size: 1.5rem;
                 text-decoration: none;
                 padding: 0.6rem;
-                border: solid 1px $dark;
-                border-radius: 8px;
-                display: grid;
+                display: flex;
                 transition: all 0.2s ease-in-out;
 
                 &:hover {
-                    border: solid 1px $light;
                     color: $light;
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 660px) {
+    .side-menu-container {
+        &:hover {
+            width: 50%
         }
     }
 }
