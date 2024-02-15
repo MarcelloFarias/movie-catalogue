@@ -26,3 +26,9 @@ export async function getUpcomingMovies(currentPage) {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${currentPage}`, options);
     return response.data;
 }
+
+export async function getMovie(movieId) {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options);
+    console.log(response.data)
+    return response.data;
+}
