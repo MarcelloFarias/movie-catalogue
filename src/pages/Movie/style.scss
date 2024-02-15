@@ -5,6 +5,29 @@
     height: 100dvh;
 }
 
+.button-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.btn-back {
+    background: $red;
+    color: $light;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loading-movie-container {
+    display: grid;
+    place-items: center;
+    color: $light;
+}
+
 .movie-banner-container {
     display: grid;
     place-items: center;
@@ -26,34 +49,36 @@
         color: $light;
         text-align: center;
 
-        h1 {
+        .movie-name {
             font-size: 2.5rem;
         }
     }
 }
 
-.movie-details-row {
-    padding: 1rem;
-    font-size: 1.5rem;
-    display: grid;
-    place-items: center;
-    animation: reveal 1ms ease-in-out;
-    animation-timeline: view();
-    animation-range: cover 0 cover 50%;
-}
-
 .movie-overview-container {
-    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     color: $light;
 
+    h1 {
+        font-size: 2.5rem;
+        animation: reveal 1ms ease-in-out;
+        animation-timeline: view();
+        animation-range: cover 0 cover 50%;
+    }
+
     .movie-overview {
+        padding: 0 100px;
+        margin-top: 50px;
         animation: appear 1ms ease-in-out;
         animation-timeline: view();
         animation-range: cover 0 cover 50%;
     }
 }
 
-.movie-details-container {
+.movie-details {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -90,14 +115,14 @@
                 color: $light;
             }
             .movie-detail {
-                color: $gray
+                color: $gray;
             }
         }
     }
 }
 
 @media(max-width: 850px) {
-    .movie-details-container {
+    .movie-details {
         flex-direction: column;
         align-items: center;
         justify-content: center;

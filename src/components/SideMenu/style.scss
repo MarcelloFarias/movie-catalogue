@@ -21,7 +21,8 @@
         z-index: 2;
 
         .side-nav-label {
-            display: inline;
+            display: block;
+            animation: appear 0.5s ease-in-out;
         }
     }
 
@@ -38,6 +39,7 @@
         justify-content: center;
         gap: 20px;
         list-style: none;
+
         margin: 20px 0;
 
         .side-nav-item {
