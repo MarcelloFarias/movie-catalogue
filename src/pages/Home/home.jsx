@@ -4,6 +4,7 @@ import MovieCard from "../../components/MovieCard/movie-card";
 import ListPagination from "../../components/ListPagination/list-pagination";
 import SideMenu from "../../components/SideMenu/side-menu";
 import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from "../../services/tmdb.movies";
+import ToTopButton from "../../components/ToTopButton/to-top-button";
 
 function Home() {
     const [nowPlayingMovies, setNowPlayingMovies] = useState(new Array);
@@ -112,6 +113,8 @@ function Home() {
                     pageHandler={setUpcomingMoviesCurrentPage}
                 />
             </section>
+
+            <ToTopButton/>
         </>
     );
 }

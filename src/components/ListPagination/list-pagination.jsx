@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "./style.scss";
+import Button from "../Button/button";
 
 function ListPagination({currentPage, totalPages, pageHandler}) {
     const nextPage = () => {
@@ -17,13 +18,15 @@ function ListPagination({currentPage, totalPages, pageHandler}) {
 
     return (
         <div className="pagination-row">
-            <button className="btn btn-pagination" onClick={previousPage}>
+            <Button onClick={previousPage} style={{padding: "0.8rem"}}>
                 <IoIosArrowBack/>
-            </button>
-            <p>{currentPage} ... {totalPages}</p>
-            <button className="btn btn-pagination" onClick={nextPage}>
+            </Button>
+            <p className="pagination-numbers">
+                {currentPage} ... {totalPages}
+            </p>
+            <Button onClick={nextPage} style={{padding: "0.8rem"}}>
                 <IoIosArrowForward/>
-            </button>
+            </Button>
         </div>
     );
 }

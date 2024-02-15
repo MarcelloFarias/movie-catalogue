@@ -10,11 +10,16 @@
     color: $light;
     margin: 100px 0;
 
-    .btn-pagination {
-        background: $red;
-        color: $light;
-        margin: 0 20px;
-        height: 30px;
-        width: 30px;
+    .pagination-numbers {
+        margin: 0 50px;
+
+        .pagination-number {
+            padding: 0.4rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $red;
+            }
+        }
     }
 }

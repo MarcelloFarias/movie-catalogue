@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import "./style.scss";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getMovie } from "../../services/tmdb.movies";
-import { Link } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
+import Button from "../../components/Button/button";
+import ToTopButton from "../../components/ToTopButton/to-top-button";
 
 function Movie() {
     const {movieId} = useParams();
+    const navigate = useNavigate();
 
     const [movie, setMovie] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -32,11 +34,9 @@ function Movie() {
             ) : (
                 <>
                     <div className="button-row">
-                        <Link to="/" style={{textDecoration: "none"}}>
-                            <button className="btn btn-back">
-                                <MdKeyboardBackspace/> Back to Home
-                            </button>
-                        </Link>
+                        <Button onClick={() => navigate("/")}>
+                            <MdKeyboardBackspace/> Back to Home
+                        </Button>
                     </div>
 
                     <main className="movie-details-container movie-banner-container">
@@ -68,13 +68,13 @@ function Movie() {
                                     return <p className="movie-detail" key={genre.id}>{genre.name}</p>
                                 })}
                             </div>
-                            <Link to="/" style={{textDecoration: "none"}}>
-                                <button className="btn btn-back">
-                                    <MdKeyboardBackspace/> Back to Home
-                                </button>
-                            </Link>
-                        </div>
+                            <Button onClick={() => navigate("/")} style={{marginTop: "50px", marginBottom: "50px"}}>
+                                <MdKeyboardBackspace/> Back to Home
+                            </Button>     
+                         </div>
                     </section>
+
+                    <ToTopButton />
                 </>
             )}
         </>

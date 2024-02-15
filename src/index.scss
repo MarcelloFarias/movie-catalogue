@@ -73,20 +73,6 @@ main, section {
     }
 }
 
-.btn {
-    padding: 0.4rem;
-    display: grid;
-    place-items: center;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    &:hover {
-        opacity: .5;
-    }
-}
-
 @keyframes reveal {
     from {
         opacity: 0;
