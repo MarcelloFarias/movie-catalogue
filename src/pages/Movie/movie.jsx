@@ -5,6 +5,7 @@ import { getMovie } from "../../services/tmdb.movies";
 import { MdKeyboardBackspace } from "react-icons/md";
 import Button from "../../components/Button/button";
 import ToTopButton from "../../components/ToTopButton/to-top-button";
+import Footer from "../../components/Footer/footer";
 
 function Movie() {
     const {movieId} = useParams();
@@ -73,7 +74,7 @@ function Movie() {
                             </Button>     
                          </div>
                     </section>
-
+                    <Footer/>
                     <ToTopButton />
                 </>
             )}
