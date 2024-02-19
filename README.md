@@ -2,9 +2,11 @@
 
 https://github.com/MarcelloFarias/movie-catalogue/assets/90793123/11c4eba9-157b-4355-9fd1-8d5b0a627066
 
-The movie catalogue is a front-end application that list movies to the user by different categories and show details about a movie. It was built using ![The Movie Database API](https://www.themoviedb.org).
+The movie catalogue is a front-end application that list movies to the user by different categories and show details about a movie. It was built using [The Movie Database API](https://www.themoviedb.org).
 
-⚠️ É imprescindível obter uma API key ou Access Token da API do ![TMDB](https://www.themoviedb.org) ! Você pode obtê-los criando sua conta e logo em seguida, suas credenciais de acesso
+Você pode conferí-lo clicando [Aqui](https://the-moviecatalogue.netlify.app)
+
+⚠️ É imprescindível obter uma API key ou Access Token da API do [TMDB](https://www.themoviedb.org) ! Você pode obtê-los criando sua conta e logo em seguida, suas credenciais de acesso
 
 # Acesso ao projeto
 
@@ -40,4 +42,4 @@ npm run dev
 5. Crie a solicitação de pull.
 
 # Contato
-Marcello Farias - ![Linkedin](https://linkedin.com/in/marcello-rocha-381572231/) - ![Instagram](https://instagram.com/cello.farias)
+Marcello Farias - [Linkedin](https://linkedin.com/in/marcello-rocha-381572231/) - [Instagram](https://instagram.com/cello.farias)
