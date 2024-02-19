@@ -6,6 +6,11 @@ The movie catalogue is a front-end application that list movies to the user by d
 
 Você pode conferí-lo clicando [Aqui](https://the-moviecatalogue.netlify.app)
 
+# Tecnologias utilizadas
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
 ⚠️ É imprescindível obter uma API key ou Access Token da API do [TMDB](https://www.themoviedb.org) ! Você pode obtê-los criando sua conta e logo em seguida, suas credenciais de acesso
 
 # Acesso ao projeto
