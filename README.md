@@ -46,5 +46,10 @@ npm run dev
 4. Envie para o branch original: git push origin <nome_do_projeto> / <local>
 5. Crie a solicitação de pull.
 
+# Licença
+
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) <br>
+Distribuído sob a licença MIT. Consulte `LICENSE` para obter mais informações.
+
 # Contato
 Marcello Farias - [Linkedin](https://linkedin.com/in/marcello-rocha-381572231/) - [Instagram](https://instagram.com/cello.farias)
